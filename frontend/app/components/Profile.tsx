@@ -3,10 +3,8 @@
 import { useAccount, useBalance, useEnsName } from "wagmi";
 import { formatUnits } from "viem";
 
-// Middle text ellipeise
-
 function middleEllipsis(str: string, max: number) {
-  if (!str) str = "Hello World";
+  if (!str) str = "";
   if (!max) max = 20;
   if (str.length <= max) {
     return str;

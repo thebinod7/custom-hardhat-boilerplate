@@ -25,9 +25,8 @@ export const ConnectBtn = () => {
   if (!isConnected) {
     return (
       <button
-        className="btn"
+        className="btn focus:outline-none text-white bg-purple-700 rounded-lg text-sm px-5 py-2.5 mb-2"
         onClick={async () => {
-          // Disconnecting wallet first because sometimes when is connected but the user is not connected
           if (isConnected) {
             disconnect();
           }
@@ -60,7 +59,6 @@ export const ConnectBtn = () => {
           className="h-8 w-8 rounded-full flex items-center justify-center flex-shrink-0 overflow-hidden"
           style={{
             backgroundColor: "#222",
-            boxShadow: "0px 2px 2px 0px rgba(81, 98, 255, 0.20)",
           }}
         ></div>
         <p>Account</p>
