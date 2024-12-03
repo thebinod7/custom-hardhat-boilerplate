@@ -1,3 +1,5 @@
+"use client";
+
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 
 export default function Home() {
@@ -6,6 +8,7 @@ export default function Home() {
       <div>
         <h1 className="mb-10">Hello Buddy!</h1>
         <ConnectButton />
+        {/* <SendTransaction /> */}
       </div>
 
       <div>
