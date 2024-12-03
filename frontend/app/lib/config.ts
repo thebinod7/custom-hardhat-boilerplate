@@ -1,16 +1,16 @@
 "use client";
 
 import { http, createStorage, cookieStorage } from "wagmi";
-import { sepolia, bscTestnet, blastSepolia } from "wagmi/chains";
-import { Chain, getDefaultConfig } from "@rainbow-me/rainbowkit";
+import { mainnet, sepolia, bscTestnet, base } from "wagmi/chains";
+import { getDefaultConfig } from "@rainbow-me/rainbowkit";
 
-const projectId = "abc123";
+const PROJECT_ID = process.env.NEXT_PUBLIC_RAINBOW_PROJECT_ID as string;
 
-const supportedChains: Chain[] = [sepolia, bscTestnet, blastSepolia];
+const supportedChains = [mainnet, sepolia, bscTestnet, base];
 
 export const config = getDefaultConfig({
   appName: "WalletConnection",
-  projectId,
+  projectId: PROJECT_ID,
   chains: supportedChains as any,
   ssr: true,
   storage: createStorage({
@@ -21,3 +21,10 @@ export const config = getDefaultConfig({
     {}
   ),
 });
+
+// export const config = getDefaultConfig({
+//   appName: "My RainbowKit App",
+//   projectId: PROJECT_ID,
+//   chains: [mainnet, sepolia, bscTestnet, base],
+//   ssr: true,
+// });
