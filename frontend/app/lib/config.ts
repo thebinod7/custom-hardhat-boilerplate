@@ -1,12 +1,11 @@
 "use client";
 
-import { http, createStorage, cookieStorage } from "wagmi";
-import { mainnet, sepolia, bscTestnet, base } from "wagmi/chains";
 import { getDefaultConfig } from "@rainbow-me/rainbowkit";
+import { cookieStorage, createStorage, http } from "wagmi";
+import { SUPPORTED_CHAINS } from "../constants";
 
 // Create PROJECT_ID from https://cloud.reown.com/
 const PROJECT_ID = process.env.NEXT_PUBLIC_RAINBOW_PROJECT_ID as string;
-const SUPPORTED_CHAINS = [mainnet, sepolia, bscTestnet, base];
 
 export const config = getDefaultConfig({
   appName: "WalletConnection",
